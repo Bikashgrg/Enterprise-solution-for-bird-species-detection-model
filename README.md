@@ -69,12 +69,15 @@ When you start or open the website using the above commands to host the web appl
 ## Screenshots of some of the outputs generated in the created web application above:
 
 1. Erithacus_rubecula
+
 ![examples (2)](https://user-images.githubusercontent.com/29011734/164399551-f9071bb2-1989-4ffd-ac28-f1b837b61e40.png)
 
 2. Periparus_ater
+
 ![examples (3)](https://user-images.githubusercontent.com/29011734/164399707-ab02df45-f916-4436-a74a-46be48026033.png)
 
 3. Pica_pica
+
 ![examples (1)](https://user-images.githubusercontent.com/29011734/164399816-558bd3ab-50a3-4be1-b18a-daa785180361.png)
 
 ## Thank you
