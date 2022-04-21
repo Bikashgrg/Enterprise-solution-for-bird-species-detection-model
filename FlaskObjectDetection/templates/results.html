@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bird Species Detection Website</title>
+
+    <!-- To specify the character encoding for HTML documents -->
+    <meta charset="utf-8">
+
+    <!-- To render the width of the page as per the screen width in browser -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Linking bootstrap, fonts and external css stylesheet -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}"
+</head>
+<body>
+<!-- Navigation bar with toggler -->
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <a class="navbar-brand" href="{{url_for('index')}}">Home</a>
+        </div>
+    </div>
+</nav>
+
+<!-- First container (Showing output of the uploaded image) -->
+<div class="container-fluid bg-1 text-center" id="how">
+    <h2 class="text-success margin">Congratulations!!!</h2>
+    <h3 class="text-success margin">Your successful output, including the species name and accuracy, is shown below:</h3>
+    <div class="row justify-content-center">
+        <img src="{{image_url}}" class="img-responsive margin img" alt="output">
+    </div> 
+    <h3 class="text-warning margin">Are you interested in detecting and predicting more bird species?</h3>
+    <h3 class="bg-info text-white margin">Please click 'Home' in the navigation bar to restart the process</h3>
+    <h2 class="text-success">Thank You for visiting</h2>
+</div>
+
+<!-- Second container or Footer(Contact section) for social links -->
+<footer class="container-fluid bg-3 text-center" id="contact">
+    <h3 class="margin">Where To Find Me?</h3><br>
+    <div>
+        <a href="https://github.com/Bikashgrg" class="fa fa-github" target="_blank"></a>
+        <a href="https://www.linkedin.com/in/bikash-grg/" class="fa fa-linkedin" target="_blank"></a>
+        <a href="https://twitter.com/gurung_bucky" class="fa fa-twitter" target="_blank"></a>
+        <a href="https://bgstuffs.wordpress.com/" class="fa fa-wordpress" target="_blank"></a>
+    </div>
+</footer>
+
+</body>
+
+</html>

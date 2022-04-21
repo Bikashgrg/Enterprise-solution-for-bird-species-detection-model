@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bird Species Detection Website</title>
+
+    <!-- To specify the character encoding for HTML documents -->
+    <meta charset="utf-8">
+
+    <!-- To render the width of the page as per the screen width in browser -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Linking bootstrap, fonts and external css stylesheet for making website appealing and resposive -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}"
+</head>
+<body>
+<!-- Introduction with the help of Bootstrap jumbotron  -->
+<div class="jumbotron text-center">
+    <h1>Welcome to Bird Species Detection Website</h1>
+    <p>A Deep Learning model called Faster R-CNN is used to train the model and identify the three bird species on this website!</p> 
+    <a href="#how" class="btn btn-info" role="button">Lets get started</a>
+</div>
+
+<!-- Navigation bar with toggler -->
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Making navigation bar to collapse when screen size is smaller -->
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <a class="navbar-brand" href="{{url_for('index')}}">Home</a>
+            <ul class="nav navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="#how">About Project</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#contact">Contact</a>
+            </li>   
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- First container (About Project) -->
+<div class="container-fluid bg-1 text-center" id="how">
+    <h3 class="text-success margin">Let us first know about the project and then the process</h3>
+    <p><span class="text-info font-weight-bold">What:</span> This project is about building an enterprise-ready solution for a large-scale machine learning project.
+        To create this website, I have used deep learning model to detect bird species that I have trained during my first
+        semester and was able to detect 3 bird species: <kbd>Pica_pica, Periparus_ater and Erithacus_rubecula </kbd>.
+        The Faster R-CNN model was used to train the given datasets to categorise bird species based on images provided 
+        by my professor, Dr. Carl Chalmers, where a total of 2402 images with 801 images each were tagged using RenomTag.   
+    </p>
+    <p><span class="text-info font-weight-bold">How:</span> To put my solution into action, for my frontend application, I used Flask with HTML, CSS, and Bootstrap and allowed it to interface 
+        with a TensorFlow serving hosted in Docker over a gRPC communications protocol. To offer appropriate inferencing speed, the system's 
+        inferencing components are run on the GPU. A range of additional technologies, including tensorflow, pandas, numpy, and several more libraries, were also utilised. 
+    </p>
+    <p>
+        <span class="text-warning font-weight-bold">Note:</span> 
+        Please upload any of the three bird species mentioned. Only the three bird species can be 
+        detected or predicted using this website. If you try to detect different bird species, it will either not detect or 
+        will falsely detect the species.
+    </p> 
+</div>
+
+<!-- Second container (Performing detection task) -->
+<div class="container-fluid bg-2 text-center">
+    <!-- First row -->
+    <div class="row justify-content-center">
+        <h3 class="text-success">Upload any of the three bird species listed below to predict and detect using ML/DL</h3><br/><br/>
+    </div>
+    <!-- Second row -->
+    <div class="row">
+        <!-- Dividing three image in equal column space -->
+        <div class="col-sm-4">
+          <p class="font-weight-bold">Erithacus_rubecula</p>
+          <img src="../static/img/spe2.jpg" class="img-responsive margin img" alt="Image1">
+        </div>
+        <div class="col-sm-4"> 
+          <p class="font-weight-bold">Pica_pica</p>
+          <img src="../static/img/spe1.jpg" class="img-responsive margin img" alt="Image2">
+        </div>
+        <div class="col-sm-4"> 
+          <p class="font-weight-bold">Periparus_ater</p>
+          <img src="../static/img/spe3.jpg" class="img-responsive margin img" alt="Image3">
+        </div>
+    </div>
+    <!-- Third row -->
+    <div class="row justify-content-center">
+        <form action="upload" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <input type="file" accept=".jpg, .png, .jpeg" class="form-control-file border" name="file" id="inputFile1" required>
+            </div>    
+            <div class="col-lg-12">
+                <img class="rounded mx-auto d-block" id="imagen"><br/>
+            </div>
+            <input type="submit" class="btn btn-primary btn-block" value="Detect Species">
+        </form>
+    </div>
+</div>
+
+<!-- Third container or Footer(Contact section) for social links -->
+<footer class="container-fluid bg-3 text-center" id="contact">
+    <h3 class="margin">Where To Find Me?</h3><br>
+    <div>
+        <a href="https://github.com/Bikashgrg" class="fa fa-github" target="_blank"></a>
+        <a href="https://www.linkedin.com/in/bikash-grg/" class="fa fa-linkedin" target="_blank"></a>
+        <a href="https://twitter.com/gurung_bucky" class="fa fa-twitter" target="_blank"></a>
+        <a href="https://bgstuffs.wordpress.com/" class="fa fa-wordpress" target="_blank"></a>
+    </div>
+</footer>
+
+</body>
+
+<!-- Script for showing the uploading image in the current webpage -->
+<script>
+    function init() {
+        var inputFile = document.getElementById('inputFile1');
+        inputFile.addEventListener('change', mostrarImagen, false);
+    }
+    function mostrarImagen(event) {
+        var file = event.target.files[0];
+        var reader = new FileReader();
+        reader.onload = function (event) {
+            var img = document.getElementById('imagen');
+            img.src = event.target.result;
+            img.width = 300;
+            img.height = 300;
+        }
+        reader.readAsDataURL(file);
+    }
+    window.addEventListener('load', init, false);
+</script>
+
+</html>

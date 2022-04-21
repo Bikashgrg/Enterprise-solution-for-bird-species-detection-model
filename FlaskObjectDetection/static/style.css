@@ -1,0 +1,72 @@
+body {
+    font: 20px Montserrat, sans-serif;
+    line-height: 1.8;
+  }
+  p {
+      font-size: 16px;
+    }
+  .margin {
+      margin-bottom: 40px;
+    }
+  .bg-1 { 
+    background-color: #474e5d; /* Dark Blue */
+    color: #ffffff;
+  }
+  .bg-2 { 
+    background-color: #ffffff; /* White */
+    color: #555555;
+  }
+  .bg-3 { 
+    background-color: #2f2f2f; /* Black Gray */
+    color: #fff;
+  }
+  .img {
+    width: 80%;
+  }
+  .container-fluid {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .navbar {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 14px;
+    letter-spacing: 2px;
+  }
+  .navbar-nav  li a:hover {
+    color: #1abc9c;
+  }
+  .jumbotron{
+    background-image: url('img/bg-image.jpeg');
+    background-size: cover;
+    margin-bottom: 0;
+  }
+  .fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 65px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 5px;
+  }
+  .fa:hover {
+    opacity: 0.8;
+    color: white;
+  }
+  .fa-github {
+    background: #4078c0;
+    color: white;
+  }
+  .fa-twitter {
+    background: #55ACEE;
+    color: white;
+  }
+  .fa-linkedin {
+    background: #007bb5;
+    color: white;
+  }
+  .fa-wordpress {
+    background: #21759b;
+    color: white;
+  }
+  
