@@ -4,7 +4,14 @@ This project is about building an enterprise-ready solution for a large-scale ma
 
 I created a solution in Flask for my frontend application, allowing it to communicate with a TensorFlow serving housed in Docker via the gRPC communications protocol.Docker is used to run both the Flask application and the model hosted in TensorFlow serving. To offer appropriate inferencing speed, the system's inferencing elements are run on the GPU. Users can upload photographs for classification of the three bird species mentioned above and examine the results in this web application, where I have attempted to make the website as professional as possible using Bootstrap and HTML/CSS. Also, with the help of Bootstrap, I made the website responsive, which means that it automatically adjusts to the screen size and orientation of the device.
 
-I've build an index.html page that allows people to add photographs using a form. Image uploads are limited to the following extensions (.jpg, .jpeg, .png) and a warning message is displayed if the user attempts to submit without providing any input. Also, for other extensions, I've used the 'accept' attribute, which prevents users from uploading files or images that do not match the required extensions. In addition, I constructed a results page named results.html that displays the classified image (with bounding boxes) as well as the species name and associated probability and these output images is saved automatically in *'../FlaskObjectDetection/uploads'* folder.
+I've build an index.html page that allows people to add photographs using a form. Image uploads are limited to the following extensions (.jpg, .jpeg, .png) and a warning message is displayed if the user attempts to submit without providing any input. Also, for other extensions, I've used the 'accept' attribute, which prevents users from uploading files or images that do not match the required extensions. In addition, I constructed a results page named results.html that displays the classified image (with bounding boxes) as well as the species name and associated probability. 
+
+Inside *FlaskObjectDetection* folder:
+
+1. The output images is saved automatically in *uploads* folder.
+2. The *data* folder contains the *label_map.pbtxt* file.
+3. The *static* folder contains the css file and images used in the web application.
+4. The *templates* folder contains the html files that is used to build the website. 
 
 ## Commands to host application
 
