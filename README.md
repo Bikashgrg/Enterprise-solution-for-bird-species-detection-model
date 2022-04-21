@@ -1,4 +1,4 @@
-# Enterprise-solution-for-bird-speices-detection-model
+# Enterprise-solution-for-bird-species-detection-model
 
 This project is about building an enterprise-ready solution for a large-scale machine learning project. To create this website, I have used Faster R-CNN deep learning model to detect bird species that I have trained initially and was able to detect 3 bird species:  Pica_pica, Periparus_ater and Erithacus_rubecula. The given datasets of bird species images was provided by my  professor, Dr. Carl Chalmers, where a total of 2403 images with 801 images each were tagged using RenomTag.
 
